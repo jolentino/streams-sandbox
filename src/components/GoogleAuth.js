@@ -24,7 +24,7 @@ class GoogleAuth extends React.Component {
 
 	// Invokes appropriate 'action creator' according to 'isSignedIn' status.
 	onAuthChanged = (isSignedIn) => {
-		isSignedIn ? this.props.signIn() : this.props.signOut();
+		isSignedIn ? this.props.signIn(this.auth.currentUser.get().getId()) : this.props.signOut();
 	};
 
 	renderAuthButton() {
@@ -46,7 +46,7 @@ class GoogleAuth extends React.Component {
 	}
 
 	render() {
-		return <div classname="item">{this.renderAuthButton()}</div>;
+		return <div className="item">{this.renderAuthButton()}</div>;
 	}
 }
 
