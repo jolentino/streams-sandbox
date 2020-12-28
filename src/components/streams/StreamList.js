@@ -10,12 +10,17 @@ class StreamList extends React.Component {
 	}
 
 	// Helper method to check if the user logged in created the stream.
-	renderAdmin = (userId) => {
+	// Refactored to provide stream id for edit and delete functionality.
+	renderAdmin = (userId, id) => {
 		if (userId === this.props.currentUserId) {
 			return (
 				<div className="right floated content">
-					<button className="ui button primary">Edit</button>
-					<button className="ui button negative">Delete</button>
+					<Link to={`/streams/edit/${id}`} className="ui button primary">
+						Edit
+					</Link>
+					<Link to={`/streams/delete/${id}`} className="ui button negative">
+						Delete
+					</Link>
 				</div>
 			);
 		}
@@ -39,7 +44,7 @@ class StreamList extends React.Component {
 			return this.props.streams.map(({ id, title, description, userId }) => {
 				return (
 					<div key={id} className="item">
-						{this.renderAdmin(userId)}
+						{this.renderAdmin(userId, id)}
 						<i className="large middle aligned icon camera" />
 						<div className="content">
 							{title}
