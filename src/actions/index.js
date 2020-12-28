@@ -16,6 +16,7 @@ export const signOut = () => {
 
 export const createStream = (formValues) => {
 	return async (dispatch, getState) => {
+		// Assigns streams to a user if a user is logged in.
 		const { userId } = getState().auth;
 		const { data } = await streams.post('/streams', { ...formValues, userId });
 
@@ -44,9 +45,10 @@ export const fetchStream = (id) => {
 
 export const editStream = (id, formValues) => {
 	return async (dispatch) => {
-		const { data } = await streams.put(`/streams/${id}`, formValues);
+		const { data } = await streams.patch(`/streams/${id}`, formValues);
 
 		dispatch({ type: 'EDIT_STREAM', payload: data });
+		history.push('/');
 	};
 };
 
