@@ -1,4 +1,5 @@
 import streams from '../api/streams';
+import history from '../history';
 
 export const signIn = (userId) => {
 	return {
@@ -15,11 +16,13 @@ export const signOut = () => {
 
 export const createStream = (formValues) => {
 	return async (dispatch, getState) => {
-		// Assigns streams to a user if a user is logged in.
 		const { userId } = getState().auth;
 		const { data } = await streams.post('/streams', { ...formValues, userId });
 
 		dispatch({ type: 'CREATE_STREAM', payload: data });
+
+		// Programmatically navigates user back to root route.
+		history.push('/');
 	};
 };
 
