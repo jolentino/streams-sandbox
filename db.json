@@ -1,0 +1,14 @@
+{
+	"streams": [
+		{
+			"title": "App Info",
+			"description": "This is a mock-app of Twitch.",
+			"id": 1
+		},
+		{
+			"title": "How to Use this App",
+			"description": "In order to create, edit, and delete a stream logs, you must be signed in! Only email information will be used for authentication.",
+			"id": 2
+		}
+	]
+}
