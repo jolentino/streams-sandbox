@@ -43,14 +43,14 @@ class StreamList extends React.Component {
 		if (this.props.streams.length > 0) {
 			return this.props.streams.map(({ id, title, description, userId }) => {
 				return (
-					<div key={id} className="item">
+					<Link to={`/streams/show/${id}`} key={id} className="item">
 						{this.renderAdmin(userId, id)}
 						<i className="large middle aligned icon camera" />
 						<div className="content">
 							{title}
 							<div className="description">{description}</div>
 						</div>
-					</div>
+					</Link>
 				);
 			});
 		}
