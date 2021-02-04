@@ -1,3 +1,9 @@
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/69471470/106844219-f4406600-6675-11eb-9892-d755fd19cc88.gif" width="400">
+</p>
+
+<h1 align="center">Video Search Sandbox</h1>
+
 # Sandbox Playground for React
 
 This is my version-controlled sandbox to play with React.
