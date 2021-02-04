@@ -15,3 +15,4 @@ In this sandbox, I created an mock-app that resembles streaming service Twitch.
 This project practiced on Google OAuth implementation, react-router navigation, middleware, redux-form, and modals.
 
 Unfortunately, I'm unable to upload this app onto Netlify, since Netlify is meant for static websites. This app utilizes json-server.
+However, feel free to watch the demo gif to get a visual understanding!
